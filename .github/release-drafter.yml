@@ -1,0 +1,44 @@
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: '🧰 Maintenance'
+    labels: 
+      - 'chore'
+      - 'ci'
+      - 'doc'
+      - 'pkg'
+change-template: '- $TITLE $AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+template: |
+  ## Changes
+
+  $CHANGES
+
+  ### Usage
+
+  These changes are published as part of the docker image `chweicki/noria-mysql-adapter:$RESOLVED_VERSION` which is published to docker hub
+
+  ```
+  docker run -p 3306 chweicki/noria-mysql-adapter:$RESOLVED_VERSION --address <address> --deployment <deployment> --zookeeper-address <zk_addr>
+  ```
+  > Will expose noria mysql adapter on your local port 3306
