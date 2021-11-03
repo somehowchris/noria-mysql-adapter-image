@@ -5,7 +5,7 @@ RUN apk add --no-cache musl-dev alpine-sdk libc-dev clang-dev
 WORKDIR /src
 
 COPY src/ .
-
+ENV CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-Zgcc-ld=lld"
 RUN cargo update
 RUN cargo build --release
 
