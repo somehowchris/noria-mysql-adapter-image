@@ -9,7 +9,7 @@ COPY src/ .
 RUN cargo update
 RUN cargo build --release
 
-FROM alpine:3.14
+FROM scratch
 
 COPY --from=build /src/target/release/noria-mysql /bin/noria-mysql
 
