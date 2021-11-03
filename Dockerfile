@@ -9,7 +9,7 @@ ENV CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-Zgcc-ld=lld"
 RUN cargo update
 RUN cargo build --release
 
-FROM alpine:3.14
+FROM scratch
 
 COPY --from=build /src/target/release/noria-mysql /bin/noria-mysql
 
