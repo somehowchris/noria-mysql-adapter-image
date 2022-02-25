@@ -1,4 +1,4 @@
-FROM rust:1.58.1-alpine3.14 as build
+FROM rust:1.59.0-alpine3.14 as build
 
 RUN apk add --no-cache musl-dev alpine-sdk libc-dev clang-dev
 
